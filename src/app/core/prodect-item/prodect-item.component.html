@@ -1,0 +1,19 @@
+<div *ngIf="prodectitem.discount" class="item-medium-1__alert" #divsale>Sale</div>
+<div class="item-medium-1__image image" style="background-image: url('assets/img/device.png')">
+
+  <a href="#" class="item-medium-1__action " (click)="itemAdd()">Add to Cart</a>
+</div>
+<a href="#">
+  <h4>{{prodectitem.basiData[0].name}}</h4>
+  <div>
+    <del *ngIf="prodectitem.discount" [innerText]="prodectitem.price"> $</del>
+    <span class="lable">{{getprice()}}</span>
+  </div>
+</a>
+<div class="crud-actions">
+  <a href="#"><i class="far fa-eye"></i></a>
+  <br>
+  <a href="#"><i class="fas fa-edit"></i></a>
+  <br>
+  <a (click)="delete(prodectitem.id)"><i class="fas fa-trash-alt"></i></a>
+</div>

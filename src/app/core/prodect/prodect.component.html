@@ -1,0 +1,64 @@
+<!-- <app-header></app-header> -->
+<div class="container">
+  <!-- filters -->
+  <section class="filters">
+    <!-- search box -->
+    <div class="search-box">
+      <input class="search-box__input" placeholder="Search..." type="text" name="txt_search" id="">
+      <button type="submit" class="search-box__btn">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+    <app-filter-list></app-filter-list>
+    <app-tage></app-tage>
+
+    <div>
+      <!-- title -->
+      <h5></h5>
+      <!-- small item -->
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </section>
+  <!-- Items -->
+  <section class="item-listing">
+    <!-- tools (sorting , change view , exporting) -->
+    <div class="item-listing__tools">
+      <select class="form-control" name="" id="">
+        <option value="1">Featured</option>
+        <option value="2">Price low to high</option>
+        <option value="3">Price high to low</option>
+        <option value="4">Name</option>
+      </select>
+      <a class="action-btn" routerLink="/add-prodect">
+        <i class="fas fa-plus"></i>
+      </a>
+    </div>
+    <!-- items -->
+    <div class="item-listing__items item-listing--3items">
+      <!-- medium item -->
+      <app-prodect-item *ngFor="let item of proudectArrayToView let i = index" [prodectItems]="item"
+        class="item-medium-1">
+      </app-prodect-item>
+    </div>
+
+
+    <!-- paging -->
+    <div class="paging">
+      <!-- left arrow -->
+      <div class="paging__arrow">
+        <i class="fas fa-angle-left"></i>
+      </div>
+      <!-- page number -->
+      <div class="paging__number active" *ngFor="let item of NOfPagesArray,
+      let i = index " (click)="OnPagention(i)">
+        {{item}}</div>
+
+      <!-- right arrow -->
+      <div class="paging__arrow">
+        <i class="fas fa-angle-right"></i>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,7 @@
+<div class="form-group">
+  <label for="">Payment Types</label>
+  <div class="form-group__checkboxs">
+    <div *ngFor="let payment of paymentArray" class="form-group__checkbox"><input type="checkbox" name="" id=""><span>
+        {{payment.name}}</span></div>
+  </div>
+</div>
